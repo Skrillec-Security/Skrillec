@@ -1,6 +1,6 @@
 import discord
 
-help_cmds = r""
+help_cmds = r">Clear | Clears messages from 1-100 "
 
 class Skrillec(discord.Client):
     async def on_ready(self):
