@@ -19,45 +19,45 @@ class Skrillec(discord.Client):
     async def on_ready(self):
         print("\nbot has started")
 
-    async def on_message(self, msg):
-        full_msg = msg.content
-        msg_args = msg.content.split(" ")
+    async def on_message(self, client):
+        full_msg = client.content
+        msg_args = client.content.split(" ")
         # msg_args = msg_args.replace("")
-        if msg.author == self.user:
+        if client.author == self.user:
             return
 
         """
         Help Command
         """
-        if full_msg == "{}help".format(prefix): await msg.channel.send("```{}```".format(Help_CMDs))
+        if full_msg == "{}help".format(prefix): await client.channel.send("```{}```".format(Help_CMDs))
 
-        if full_msg.startswith("{}help".format(prefix)) and msg.content != "{}help".format(prefix):
+        if full_msg.startswith("{}help".format(prefix)) and client.content != "{}help".format(prefix):
             if len(msg_args) > 1:
                 if msg_args[1] == "mod" or msg_args[1] == "moderation":
                     ## show moderation list
-                    await msg.channel.send("```{}```".format(moderation_cmds))
+                    await client.channel.send("```{}```".format(moderation_cmds))
                 elif msg_args[1] == "iptools":
                     ## show iptools list
-                    await msg.channel.send("g")
+                    await client.channel.send("g")
                 elif msg_args[1] == "ascii":
-                    await msg.channel.send("")
+                    await client.channel.send("")
                 elif msg_args[1] == "admin":
-                    await msg.channel.send("")
+                    await client.channel.send("")
 
-        if full_msg.startswith("{}ban".format(prefix)) and msg.content != "ban":
-            await Ban_Syetem(msg, msg_args[1], "")
+        if full_msg.startswith("{}ban".format(prefix)) and client.content != "ban":
+            await Ban_Syetem(client, full_msg, msg_args)
 
         """
         Clear Command
         """
-        if "clear" in msg.content:
+        if "clear" in client.content:
             if len(msg_args) == 1:
-                await msg.channel.send("[x] Invalid argument\nUsage: clear <amount>")
+                await client.channel.send("[x] Invalid argument\nUsage: clear <amount>")
             else:
-                await msg.channel.purge(limit = int(msg_args[1]))
+                await client.channel.purge(limit = int(msg_args[1]))
 
         """
         My User Info Command
         """
-        print(msg.content)
+        print(client.content)
         
