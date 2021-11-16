@@ -9,5 +9,7 @@ class MySQL_Utils:
         database = ""
     )
 
-    def SelectRow("SELECT * FROM users")
+    async def SelectRow():
+        return ""
+
 
