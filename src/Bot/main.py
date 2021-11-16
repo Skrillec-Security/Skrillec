@@ -2,12 +2,12 @@ import discord
 from .Commands.ban import *
 from ..Config.main import *
 
-
+prefix = ">"
 Help_CMDs = r""">Help Moderation | List Of Moderation Commands
 >Help IPTools | List Of IP/Networking Tools
 >Help ASCII | List of ASCII/ANSI Convertion Tools
->Help Admin | List of Skrillec admin commands
-    """
+>Help Admin | List of Skrillec admin commands"""
+
 moderation_cmds = ">"
 
 class Skrillec(discord.Client):
@@ -15,9 +15,10 @@ class Skrillec(discord.Client):
         print("\nbot has started")
 
     async def on_message(self, msg):
-        full_msg = msg[1:]
+        full_msg = ""
+        if msg.content.startswith(prefix): full_msg = msg.content[1:]
         msg_args = msg.content.split(" ")
-        msg_args = msg_args.replace("")
+        # msg_args = msg_args.replace("")
         if msg.author == self.user:
             return
 
