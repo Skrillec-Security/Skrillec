@@ -1,10 +1,17 @@
-
+import discord
 class Config:
 
     Bot_Info = {
         "Title": "Skrillec",
         "Description": "The 2022 New All-In-One Moderation. Eliminating the usage of multiple bots with limited commands on each",
-        "Version": "1.00"
+        "Version": "1.00",
+        "Prefix": ">"
+    }
+
+    Current = {
+        "fullmsg": "",
+        "cmd": "",
+        "args": [],
     }
 
     Help_CMDs = r"""List Of Commands
