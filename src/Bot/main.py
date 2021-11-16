@@ -10,6 +10,7 @@ from .Commands.clear import *
 from .Commands.ban import *
 
 from ..Config.main import *
+from ..Config.configure import *
 
 prefix = ">"
 
@@ -18,23 +19,21 @@ class Skrillec(discord.Client):
         print("\nbot has started")
 
     async def on_message(self, client):
-        full_msg = client.content
-        msg_args = client.content.split(" ")
-        # msg_args = msg_args.replace("")
+        await Configuration.Configure_MSG_Info(client)
         if client.author == self.user:
             return
 
-        if full_msg == "{}home".format(prefix): await client.channel.send("Coming soon....")
-        if full_msg == "{}help".format(prefix): await client.channel.send("```{}```".format(Config.Help_CMDs))
+        if Config.Current['fullmsg'] == "{}home".format(prefix): await client.channel.send("Coming soon....")
+        if Config.Current['fullmsg'] == "{}help".format(prefix): await client.channel.send("```{}```".format(Config.Help_CMDs))
 
-        elif full_msg.startswith("{}help".format(prefix)) and client.content != "{}help".format(prefix):
-            await Help(client, full_msg, msg_args)
+        elif Config.Current['fullmsg'].startswith("{}help".format(prefix)) and Config.Current['fullmsg'] != "{}help".format(prefix):
+            await Help(client, Config.Current['fullmsg'], Config.Current['args'])
 
-        elif full_msg.startswith("{}ban".format(prefix)) and client.content != "ban":
-            await Ban_Syetem(client, full_msg, msg_args)
+        elif Config.Current['fullmsg'].startswith("{}ban".format(prefix)) and Config.Current['fullmsg'] != "ban":
+            await Ban_Syetem(client, Config.Current['fullmsg'], Config.Current['args'])
 
         # elif "clear" in client.content:
         #     await Clear_System(client, full_msg, msg_args)
 
-        print(client.content)
+        print(Config.Current['fullmsg'])
         
