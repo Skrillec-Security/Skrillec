@@ -2,7 +2,7 @@
 @title: Skrillec Advanced Bot
 @authors: Occupied, satisfied
 @since: 11/14/21
-"""
+""" 
 import discord
 from .Commands.help import *
 from .Commands.clear import *
@@ -38,17 +38,14 @@ class Skrillec(discord.Client):
         """
         if full_msg == "{}help".format(prefix): await client.channel.send("```{}```".format(Help_CMDs))
 
-        if full_msg.startswith("{}help".format(prefix)) and client.content != "{}help".format(prefix):
+        elif full_msg.startswith("{}help".format(prefix)) and client.content != "{}help".format(prefix):
             Help(client, full_msg, msg_args)
 
-        if full_msg.startswith("{}ban".format(prefix)) and client.content != "ban":
+        elif full_msg.startswith("{}ban".format(prefix)) and client.content != "ban":
             await Ban_Syetem(client, full_msg, msg_args)
 
-        if "clear" in client.content:
+        elif "clear" in client.content:
             await Clear_System(client, full_msg, msg_args)
 
-        """
-        My User Info Command
-        """
         print(client.content)
         
