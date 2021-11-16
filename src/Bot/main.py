@@ -3,20 +3,24 @@ from .Commands.ban import *
 from ..Config.main import *
 
 prefix = ">"
-Help_CMDs = r""">Help Moderation | List Of Moderation Commands
+Help_CMDs = r"""List Of Commands
+________________________________________________
+>Help Moderation | List Of Moderation Commands
 >Help IPTools | List Of IP/Networking Tools
 >Help ASCII | List of ASCII/ANSI Convertion Tools
 >Help Admin | List of Skrillec admin commands"""
 
-moderation_cmds = ">"
+moderation_cmds = r"""List Of Moderation Commands
+_______________________________________
+>clear <amount> | Clear Messages
+>ban <user> <reason> | Ban A User"""
 
 class Skrillec(discord.Client):
     async def on_ready(self):
         print("\nbot has started")
 
     async def on_message(self, msg):
-        full_msg = ""
-        if msg.content.startswith(prefix): full_msg = msg.content[1:]
+        full_msg = msg.content
         msg_args = msg.content.split(" ")
         # msg_args = msg_args.replace("")
         if msg.author == self.user:
@@ -25,13 +29,13 @@ class Skrillec(discord.Client):
         """
         Help Command
         """
-        if msg.content == "help": await msg.channel.send("```{}```".format(Help_CMDs))
+        if full_msg == "{}help".format(prefix): await msg.channel.send("```{}```".format(Help_CMDs))
 
-        if "help" in msg.content and msg.content != "help":
+        if full_msg.startswith("{}help".format(prefix)) and msg.content != "{}help".format(prefix):
             if len(msg_args) > 1:
                 if msg_args[1] == "mod" or msg_args[1] == "moderation":
                     ## show moderation list
-                    await msg.channel.send(moderation_cmds)
+                    await msg.channel.send("```{}```".format(moderation_cmds))
                 elif msg_args[1] == "iptools":
                     ## show iptools list
                     await msg.channel.send("g")
@@ -40,8 +44,8 @@ class Skrillec(discord.Client):
                 elif msg_args[1] == "admin":
                     await msg.channel.send("")
 
-        if "ban" in msg.content and msg.content != "ban":
-            await Banner_Syetem(msg, "", 0)
+        if full_msg.startswith("{}ban".format(prefix)) and msg.content != "ban":
+            await Ban_Syetem(msg, msg_args[1], "")
 
         """
         Clear Command
