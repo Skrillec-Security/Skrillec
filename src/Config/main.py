@@ -1,4 +1,5 @@
 import discord
+from discord import client
 class Config:
 
     Bot_Info = {
@@ -27,3 +28,7 @@ _______________________________________
 >ban <user> <reason> | Ban A User"""
 
     ansi_CMDs = r""" """
+
+    async def embed(name, description):
+        embed =discord.Embed(title=name, description=description, color=discord.Color.red())
+        await client.channel.send(embed=embed)
