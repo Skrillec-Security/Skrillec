@@ -14,4 +14,4 @@ async def Help(client, fmsg, msg_args):
             await client.channel.send("")
         elif msg_args[1] == "admin":
             # await client.channel.send("")
-            await Config.embed('Test', 'Just testing this function and seeing if it works!')
+            await Config.embed('Test', 'Just testing this function and seeing if it works!', client)
