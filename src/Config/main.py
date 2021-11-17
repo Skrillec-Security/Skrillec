@@ -29,6 +29,6 @@ _______________________________________
 
     ansi_CMDs = r""" """
 
-    async def embed(name, description):
-        embed = discord.Embed(title=name, description=description, color=discord.Color.red())
+    async def embed(name,description,client):
+        embed=discord.Embed(title=name, description=description, color=discord.Color.blurple())
         await client.channel.send(embed=embed)
