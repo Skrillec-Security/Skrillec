@@ -17,6 +17,9 @@ prefix = ">"
 class Skrillec(discord.Client):
     async def on_ready(self):
         print("\nbot has started")
+        
+    async def on_member_join(self, member):
+        return "" ##change this shit here
 
     async def on_message(self, client):
         await Configuration.Configure_MSG_Info(client)
