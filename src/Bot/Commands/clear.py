@@ -1,4 +1,3 @@
-from logging import error
 import os, sys, time, discord
 from ..discord_utils import *
 
