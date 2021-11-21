@@ -35,7 +35,7 @@ _______________________________________
     
     async def Help_CMD(client):
         help = discord.Embed(title='List Of Commands', color=discord.Color.dark_purple())
-        help.add_field(name='>help Moderation', value='A list of Moderation Commands.', inline=False)
+        help.add_field(name='>help mod', value='A list of Moderation Commands.', inline=False)
         help.add_field(name='>help IPTools', value="A list of IP/Networking tools.", inline=False)
         help.add_field(name='>help ASCII', value='a list of ASCII/ANSI convertion tools.', inline=False)
         help.add_field(name='>help admin', value='A list of Skrillec Admin Commands.', inline=False)
