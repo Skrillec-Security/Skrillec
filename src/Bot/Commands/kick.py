@@ -5,7 +5,7 @@ async def dick(client, fmsg, msg_args, reason='Bad intentions'):
     if client.author.guild_permissions.administrator == False:
         await client.channel.send('not enough perms.')
         return
-    if client.author.guild_permissions.administrator:
+    elif client.author.guild_permissions.administrator:
         if len(msg_args) > 1:
             userid = msg_args[1]
             if "<@" in userid: userid = userid.replace("<@", "").replace(">","").replace("!", "")
