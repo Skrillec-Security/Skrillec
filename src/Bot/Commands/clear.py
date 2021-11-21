@@ -22,6 +22,6 @@ async def Clear_System(client, fmsg, msg_args):
                 if amount == '': await discordUtils.error_Message(client, '***Usage:*** ```>clear <amount>```') ; return
                 else:
                     await client.channel.purge(limit=int(amount))
-                    await client.channel.send('cleared {} messages'.format(amount))
+                    await discordUtils.successful_Message(client, '***Successfully cleared {} messages***'.format(amount))
     except:
         await discordUtils.error_Message(client, "***Don't forget to use a number between 1-100!***")
