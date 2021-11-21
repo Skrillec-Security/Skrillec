@@ -7,7 +7,8 @@ async def Help(client, fmsg, msg_args):
         if msg_args[1] == "mod" or msg_args[1] == "moderation":
             ## show moderation list
             # await client.channel.send("```{}```".format(Config.Moderation_CMDs))
-            await (Config.embed('Moderation List', '```{}```'.format(Config.Moderation_CMDs), client))
+            # await (Config.embed('Moderation List', '```{}```'.format(Config.Moderation_CMDs), client))
+            await Config.Mod_CMD(client)
         elif msg_args[1] == "iptools":
             ## show iptools list
             await client.channel.send("g")
