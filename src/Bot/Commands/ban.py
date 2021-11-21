@@ -5,6 +5,9 @@ Advanced Banning System With Unbanning
 """
 async def Ban_Syetem(client, fmsg, msg_args):
     try:
+        if client.author.guild_permissions.administrator == False:
+            await client.channel.send('not enough perms.')
+            return
         if client.author.guild_permissions.administrator or client.author.id == "909116206668214282": ## Owner ID
             reason = "" ## Empty as no reason for ban
             if len(msg_args) > 1:
