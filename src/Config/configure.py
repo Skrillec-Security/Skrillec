@@ -12,3 +12,6 @@ class Configuration:
         else:
             Config.Current['args'].append(client.content)
             Config.Current['cmd'] = (client.content).replace(Config.Bot_Info['Prefix'], "")
+
+    async def Get_CMDs():
+        return ""
