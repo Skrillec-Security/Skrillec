@@ -8,6 +8,7 @@ import discord
 from .Commands.help import *
 from .Commands.clear import *
 from .Commands.ban import *
+from .Commands.kick import *
 
 from ..Config.main import *
 from ..Config.configure import *
@@ -36,6 +37,9 @@ class Skrillec(discord.Client):
 
         elif Config.Current['fullmsg'].startswith("{}ban".format(prefix)) and Config.Current['fullmsg'] != "ban":
             await Ban_Syetem(client, Config.Current['fullmsg'], Config.Current['args'])
+
+        elif Config.Current['fullmsg'].startswith("{}kick".format(prefix)) and Config.Current['fullmsg'] != "kick":
+            await dick(client, Config.Current['fullmsg'], Config.Current['args'])
 
         # elif "clear" in client.content:
         #     await Clear_System(client, full_msg, msg_args)
