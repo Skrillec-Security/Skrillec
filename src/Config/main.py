@@ -42,3 +42,9 @@ _______________________________________
         help.set_footer(text='{} | Prefix: {} | Version: {}'.format(Config.Bot_Info['Title'], Config.Bot_Info['Prefix'], Config.Bot_Info['Version']))
         await client.channel.send(embed=help)
 
+    async def Mod_CMD(client):
+        modList = discord.Embed(title='The Moderation Commands', color=discord.Color.dark_purple())
+        modList.add_field(name='>clear <amount>', value="clears messages", inline=False)
+        modList.add_field(name='>ban <user>', value='bans a user', inline=False)
+        await client.channel.send(embed=modList)
+
