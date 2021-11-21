@@ -44,6 +44,6 @@ class Skrillec(discord.Client):
         # elif "clear" in client.content:
         #     await Clear_System(client, full_msg, msg_args)
 
-        print('[{}]: {}'.format(client.author.name, Config.Current['fullmsg']))
+        print('[{} / {}]: {}'.format(client.guild.name, client.author.name, Config.Current['fullmsg']))
 
         
