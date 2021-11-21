@@ -28,7 +28,8 @@ class Skrillec(discord.Client):
             return
 
         if Config.Current['fullmsg'] == "{}home".format(prefix): await client.channel.send("Coming soon....")
-        if Config.Current['fullmsg'] == "{}help".format(prefix): await client.channel.send("```{}```".format(Config.Help_CMDs))
+        # if Config.Current['fullmsg'] == "{}help".format(prefix): await client.channel.send("```{}```".format(Config.Help_CMDs))
+        if Config.Current['fullmsg'] == "{}help".format(prefix): await Config.Help_CMD(client)
 
         elif Config.Current['fullmsg'].startswith("{}help".format(prefix)) and Config.Current['fullmsg'] != "{}help".format(prefix):
             await Help(client, Config.Current['fullmsg'], Config.Current['args'])
