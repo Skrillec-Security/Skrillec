@@ -24,7 +24,7 @@ class Skrillec(discord.Client):
 
     async def on_message(self, client):
         await Configuration.Configure_MSG_Info(client)
-        print("{}".format(Config.Current['fullmsg']))
+        # print("{}".format(Config.Current['fullmsg']))
         if client.author == self.user:
             return
 
@@ -44,5 +44,6 @@ class Skrillec(discord.Client):
         # elif "clear" in client.content:
         #     await Clear_System(client, full_msg, msg_args)
 
-        print(Config.Current['fullmsg'])
+        print('[{}]: {}'.format(client.author.name, Config.Current['fullmsg']))
+
         
