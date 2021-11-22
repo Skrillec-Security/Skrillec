@@ -46,5 +46,6 @@ _______________________________________
         modList = discord.Embed(title='The Moderation Commands', color=discord.Color.dark_purple())
         modList.add_field(name='>clear <amount>', value="clears messages", inline=False)
         modList.add_field(name='>ban <user>', value='bans a user', inline=False)
+        modList.add_field(name='>kick <user>', value='kicks a user', inline=False)
         await client.channel.send(embed=modList)
 
