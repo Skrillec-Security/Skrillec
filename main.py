@@ -1,4 +1,4 @@
-import os, sys, time, threading, discord
+import os, sys, time, threading
 from src.Bot.main import *
 from src.Config.main import *
 
