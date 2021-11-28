@@ -1,5 +1,4 @@
 import discord
-from discord import client
 class Config:
 
     Bot_Info = {
