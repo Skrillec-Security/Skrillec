@@ -27,7 +27,6 @@ class Skrillec(discord.Client):
     async def on_message(self, client):
         await Configuration.Configure_MSG_Info(client)
         await on_Join(client)
-        # print("{}".format(Config.Current['fullmsg']))
         if client.author == self.user:
             return
 
