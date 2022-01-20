@@ -4,5 +4,5 @@ from ..commands.help import *
 from ..commands.clear import *
 
 class Config:
-    local_db_path = os.getcwd() + "/src/assets/users.skrillec"
+    local_db_path = os.getcwd() + "/src/assets/db/users.skrillec"
     bot_prefix = ";"
