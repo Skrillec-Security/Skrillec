@@ -1,7 +1,6 @@
 import os, sys, time, discord
 
-async def clear(client):
-    await client.channel.send("working")
+from ..utils.embed_msg import *
 
-async def purge(client):
+async def clear(client):
     await client.channel.send("working")
