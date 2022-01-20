@@ -3,7 +3,7 @@ import os, sys, time
 from ..commands.help import *
 from ..commands.clear import *
 from ..commands.help_mod import *
-from ..commands.stress import *
+from ..commands.attack import *
 
 async def handle_cmd(client, msg: str, cmd: str, args):
     # Help Commands
@@ -19,4 +19,4 @@ async def handle_cmd(client, msg: str, cmd: str, args):
     # elif cmd == "lock_server":
 
     ## DDOS Commands
-    elif cmd == "stress": await stress(client, msg, cmd, args)
+    elif cmd == "attack": await attack(client, msg, cmd, args)
