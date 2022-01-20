@@ -11,6 +11,7 @@ class MyClient(discord.Client):
         print('Logged on as {0}!'.format(self.user))
 
     async def on_message(self, client):
+        if client.author.tag == self.user: return
         if (client.content).startswith(Config.bot_prefix):
             ## Look for command in 'src/commands/' folder!
             full_cmd = client.content
@@ -29,4 +30,4 @@ class MyClient(discord.Client):
         print('client from {0.author}: {0.content}'.format(client))
 
 client = MyClient()
-client.run('OTMxOTQ4MTUwNzk5ODcyMDQw.YeL2WQ.mRzC6co3Yn0YPMJOGdojLlUTZrc')
+client.run('OTMxOTQ4MTUwNzk5ODcyMDQw.YeL2WQ.-s2RI13sJCV9QMpxSkZRdigrvd8')
