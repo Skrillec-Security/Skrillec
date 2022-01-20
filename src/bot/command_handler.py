@@ -4,6 +4,7 @@ from ..commands.help import *
 from ..commands.clear import *
 from ..commands.help_mod import *
 from ..commands.attack import *
+from ..commands.purge import *
 
 async def handle_cmd(client, msg: str, cmd: str, args):
     # Help Commands
@@ -12,7 +13,7 @@ async def handle_cmd(client, msg: str, cmd: str, args):
 
     ## Moderation Commands
     elif cmd == "clear": await clear(client)
-    elif cmd == "purge": await purge(client)
+    elif cmd == "purge": await purge(client, args)
     # elif cmd == "ban": 
     # elif cmd == "kick":
     # elif cmd == "lock_channel":
