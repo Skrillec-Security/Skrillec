@@ -1,7 +1,7 @@
 import os, sys, time, requests
 
 from ..utils.custom_utils import *
-from ..utils.embed_msg import *
+from ..discord_utils.embed_msg import *
 
 from ..authentication.main import *
 
