@@ -1,4 +1,4 @@
-import os, sys, time
+import os, sys, time, authentication
 
 from ..config.main import *
 
@@ -11,7 +11,7 @@ class Crud:
             users = open(Config.local_db_path, "r").read()
             for user in users.split("\n"):
                 if len(user) == 0: return 0
-                info = parse_dbLine(user)
+                info = Crud.parse_dbLine(user)
                 # print("DB ID Pulled: " + info[1] + " | " + str(userid)) ##debug test
                 if info[1] == str(userid):
                     return info
