@@ -9,22 +9,25 @@ from .crud import *
 """
 class Auth:
     def isRegistered(userid):
-        check = find_user(userid) ## THIS FUNCTION IS WEIRD. I HAVE IT RETURNING AN ARRAY OR A INT (0) LOL
+        check = Crud.find_user(userid) ## THIS FUNCTION IS WEIRD. I HAVE IT RETURNING AN ARRAY OR A INT (0) LOL
+        print(check)
         if check != 0: return 1
         return check
         
     def isPremium(userid):
-        check = find_user(userid)
+        check = Crud.find_user(userid)
         print(check)
         if check == 0: return check
         if check[2] != 0: return 1
 
     def isAdmin(userid):
-        check = find_user(userid)
+        check = Crud.find_user(userid)
+        print(check)
         if check == 0: return check
         if check[7] != 0 and check[7] <= 3: return 1
 
     def mtime_validation(userid, time_used):
-        check = find_user(userid)
+        check = Crud.find_user(userid)
+        print(check)
         if check == 0: return check
         if check[3] > time_used: return 0 ## TIME USED IS OVER THE USER's MAX TIME!
