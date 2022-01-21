@@ -5,6 +5,7 @@ from ..commands.clear import *
 
 class Config:
     local_db_path = os.getcwd() + "/src/assets/db/users.skrillec"
+    local_api_path = os.getcwd() + "/src/assets/db/apis.skrillec"
     local_cmdlog_db_path = os.getcwd() + "/src/assets/logs/command.log"
     local_settings_path = os.getcwd() + "/src/assets/settings.skrillec"
     bot_prefix = ";"
