@@ -2,7 +2,7 @@ import os, sys, time
 
 from ..discord_utils.embed_msg import *
 
-def help_attack(client, args):
+async def help_attack(client, args):
     attack_list = """```
   Usage       Tools
 ____________________________________
