@@ -4,6 +4,7 @@ import os, sys, time, requests, discord
 from src.bot.command_handler import *
 from src.config.main import *
 from src.config.config_cmds import *
+from src.config.configure import *
 from src.discord_utils.embed_msg import *
 
 class MyClient(discord.Client):
@@ -28,4 +29,5 @@ class MyClient(discord.Client):
         print('client from {0.author}: {0.content}'.format(client))
 
 client = MyClient()
-client.run('OTMxOTQ4MTUwNzk5ODcyMDQw.YeL2WQ.Mc8XgWeeotdXmf1w_MXgllAGdPY')
+python_is_gay_as_fuck = str(Configuration.get_token())
+client.run(python_is_gay_as_fuck)
