@@ -10,6 +10,7 @@ from ..commands.attack import *
 from ..commands.info import *
 from ..commands.help_attack import *
 from ..commands.methods import *
+from ..commands.help_tools import *
 
 async def handle_cmd(client, msg: str, cmd: str, args):
     # Help Commands
@@ -28,6 +29,9 @@ async def handle_cmd(client, msg: str, cmd: str, args):
     # elif cmd == "lock_channel":
     # elif cmd == "lock_server":
 
+    ## Tools Commands
+    elif cmd == "help" and args[1] == "tools": await help_tools(client)
+    
     ## DDOS Commands
     elif cmd == "help" and args[1] == "attack": await help_attack(client, args)
     elif cmd == "attack": await attack(client, msg, cmd, args)
