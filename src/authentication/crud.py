@@ -1,6 +1,7 @@
-import os, sys, time, authentication
+import os, sys, time
 
 from ..config.main import *
+from .crud import *
 
 class Crud:
     def parse_dbLine(line):
@@ -8,7 +9,7 @@ class Crud:
 
     def find_user(userid):
         try:
-            users = open(Config.local_db_path, "r").read()
+            users = open(Config.local_db_path_backup, "r").read()
             for user in users.split("\n"):
                 if len(user) == 0: return 0
                 info = Crud.parse_dbLine(user)
@@ -16,7 +17,7 @@ class Crud:
                 if info[1] == str(userid):
                     return info
         except:
-            return 0
+            return -1
         return 0
 
     def register_user(discord_name, discord_id):
