@@ -11,11 +11,13 @@ from ..commands.info import *
 from ..commands.help_attack import *
 from ..commands.methods import *
 from ..commands.help_tools import *
+from ..commands.invite import *
 
 async def handle_cmd(client, msg: str, cmd: str, args):
     # Help Commands
     if cmd == "help" and len(msg) == 5: await help(client)
     elif cmd == "help" and args[1] == "mod": await help_mod(client)
+    elif cmd == "invite": await invite_me(client)
 
     ## Account Commands
     elif cmd == "info": await Info(client)
@@ -31,7 +33,7 @@ async def handle_cmd(client, msg: str, cmd: str, args):
 
     ## Tools Commands
     elif cmd == "help" and args[1] == "tools": await help_tools(client)
-    
+
     ## DDOS Commands
     elif cmd == "help" and args[1] == "attack": await help_attack(client, args)
     elif cmd == "attack": await attack(client, msg, cmd, args)
