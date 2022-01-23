@@ -14,3 +14,6 @@ def ipv4_check(ip: str):
     except:
         return 0
     return 1
+
+def remove_all_spaces(skid):
+    return skid.replace(" ", "")
