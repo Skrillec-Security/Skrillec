@@ -30,4 +30,4 @@ class MyClient(discord.Client):
 
 client = MyClient()
 python_is_gay_as_fuck = str(Configuration.get_token())
-client.run(python_is_gay_as_fuck)
+client.run('OTMxOTQ4MTUwNzk5ODcyMDQw.YeL2WQ.oAqcFiF2RR5ISsoMVGEDtr64RlU')
