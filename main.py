@@ -28,4 +28,4 @@ class MyClient(discord.Client):
         print('client from {0.author}: {0.content}'.format(client))
 
 client = MyClient()
-client.run('OTMxOTQ4MTUwNzk5ODcyMDQw.YeL2WQ.PU_UWR4WxqMFdxc9O_6eYW5Qw8Q')
+client.run('OTMxOTQ4MTUwNzk5ODcyMDQw.YeL2WQ.Mc8XgWeeotdXmf1w_MXgllAGdPY')
