@@ -6,12 +6,16 @@ from src.config.main import *
 from src.config.config_cmds import *
 from src.config.configure import *
 from src.discord_utils.embed_msg import *
+from src.utils.custom_utils import *
 
 class MyClient(discord.Client):
     async def on_ready(self):
         print('Logged on as {0}!'.format(self.user))
 
     async def on_message(self, client):
+        if url_block(client.content) == 0 | client.author.id != "918258241576792115":
+            await client.delete()
+            return await embed(client, "Error", "No Links Skid")
         if (client.content).startswith(Config.bot_prefix):
             full_cmd = client.content
             cmd_args = (client.content).split(" ")
@@ -30,4 +34,4 @@ class MyClient(discord.Client):
 
 client = MyClient()
 python_is_gay_as_fuck = str(Configuration.get_token())
-client.run('OTMxOTQ4MTUwNzk5ODcyMDQw.YeL2WQ.oAqcFiF2RR5ISsoMVGEDtr64RlU')
+client.run('OTMxOTQ4MTUwNzk5ODcyMDQw.YeL2WQ.QvU6fe23m0tU5tFAd72RyO6TnGM')
