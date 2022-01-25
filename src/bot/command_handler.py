@@ -4,6 +4,7 @@ import os, sys, time
 from ..commands.help import *
 from ..commands.invite import *
 ## Account 
+from ..commands.account_cmds.help_acct import *
 from ..commands.account_cmds.info import *
 ## Tools
 from ..commands.tools_cmds.help_tools import *
@@ -25,6 +26,7 @@ async def handle_cmd(client, msg: str, cmd: str, args):
     elif cmd == "invite": await invite_me(client)
 
     ## Account Commands
+    elif cmd == "help" and args[1] == "acct": await help_acct(client)
     elif cmd == "info": await Info(client)
 
     ## Moderation Commands
