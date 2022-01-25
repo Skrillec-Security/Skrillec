@@ -1,12 +1,12 @@
 import os, sys, time, requests
 
-from ..utils.custom_utils import *
-from ..discord_utils.embed_msg import *
+from ...utils.custom_utils import *
+from ...discord_utils.embed_msg import *
 
-from ..authentication.main import *
+from ...authentication.main import *
 
 async def attack(client, fmsg, cmd, args):
-    if len(args) < 4: return (await client.channel.send("[x] Error, Invalid argument\nUsage {}stress <ip> <port> <time> <method>\nExample: {}stress 1.1.1.1 80 300 UDP".format(Config.bot_prefix, Config.bot_prefix)))
+    if len(args) < 4: return (await client.channel.send("[x] Error, Invalid argument\nUsage {}attack <ip> <port> <time> <method>\nExample: {}attack 1.1.1.1 80 300 UDP".format(Config.bot_prefix, Config.bot_prefix)))
     print(client.author.id)
     if Auth.isPremium(client.author.id) == 0:
         return await embed(client, "Error", "[x] You are not a premium user to use this tool!")
