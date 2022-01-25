@@ -17,3 +17,11 @@ def ipv4_check(ip: str):
 
 def remove_all_spaces(skid):
     return skid.replace(" ", "")
+
+def url_block(line):
+        url_possibles = ["http", "https", "http://", "https://", ".com", ".net", ".io", ".xyz", ".pw"]
+        for i in url_possibles:
+                if i in line:
+                        return 0
+        return line
+
