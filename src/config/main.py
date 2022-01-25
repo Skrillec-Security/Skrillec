@@ -1,7 +1,5 @@
 import os, sys, time
-# Import Submodules (Commands)
-from ..commands.help import *
-from ..commands.clear import *
+
 
 class Config:
     ## Windows paths
