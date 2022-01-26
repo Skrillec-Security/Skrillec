@@ -1,6 +1,7 @@
 import os, sys, time
 
 from .crud import *
+from ..err_handler.main import *
 
 """
   discord name   discord id         lvl mtime conn ongoing admin expiry
@@ -31,3 +32,10 @@ class Auth:
         print(check)
         if check == 0: return check
         if check[3] > time_used: return 0 ## TIME USED IS OVER THE USER's MAX TIME!
+
+    def attack_valiation(userid, ip, p, t, m):
+        ## Get user info
+        check = Crud.find_user(userid)
+        if check == 0: return check ## Failed to get user info
+        if check == -1 return to fucking error handler skid
+        
