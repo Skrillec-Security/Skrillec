@@ -9,6 +9,7 @@ class Config:
     local_login_path_backup = os.getcwd() + "\\src\\assets\\logs\\logins.log" #login logs
     local_admin_path_backup = os.getcwd() + "\\src\\assets\\logs\\admin_cmds.log" # admin cmds logs
     local_settings_path_backup = os.getcwd() + "\\src\\assets\\settings.skrillec"
+    local_err_path = os.getcwd() + "\\src\\assets\\logs\\erros.log"
 
 
 
@@ -19,4 +20,5 @@ class Config:
     local_login_path = os.getcwd() + "/src/assets/logs/logins.log" #login logs
     local_admin_path = os.getcwd() + "/src/assets/logs/admin_cmds.log" # admin cmds logs
     local_settings_path = os.getcwd() + "/src/assets/settings.skrillec"
+    local_err_path = os.getcwd() + "/src/assets/logs/erros.log"
     bot_prefix = ";"
