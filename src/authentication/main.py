@@ -37,5 +37,5 @@ class Auth:
         ## Get user info
         check = Crud.find_user(userid)
         if check == 0: return check ## Failed to get user info
-        if check == -1 return to fucking error handler skid
+        if check == -1: return check
         
