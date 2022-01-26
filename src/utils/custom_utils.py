@@ -1,5 +1,7 @@
 import os, sys, time
 
+from ..config.main import *
+
 def ipv4_check(ip: str):
     try:
         if len(ip) <= len("255.255.255.255"):
