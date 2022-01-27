@@ -1,7 +1,7 @@
 import os, sys, time
 
-from ..discord_utils.embed_msg import *
-from ..config.main import *
+from ...discord_utils.embed_msg import *
+from ...config.main import *
 
 async def purge(client, args):
     try:

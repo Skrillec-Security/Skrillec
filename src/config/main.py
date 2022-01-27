@@ -1,7 +1,5 @@
 import os, sys, time
-# Import Submodules (Commands)
-from ..commands.help import *
-from ..commands.clear import *
+
 
 class Config:
     ## Windows paths
@@ -11,6 +9,8 @@ class Config:
     local_login_path_backup = os.getcwd() + "\\src\\assets\\logs\\logins.log" #login logs
     local_admin_path_backup = os.getcwd() + "\\src\\assets\\logs\\admin_cmds.log" # admin cmds logs
     local_settings_path_backup = os.getcwd() + "\\src\\assets\\settings.skrillec"
+    local_err_path = os.getcwd() + "\\src\\assets\\logs\\erros.log"
+    local_blacklist_path = os.getcwd() + "\\src\\assets\\db\\blacklisted.skrillec"
 
 
 
@@ -21,4 +21,6 @@ class Config:
     local_login_path = os.getcwd() + "/src/assets/logs/logins.log" #login logs
     local_admin_path = os.getcwd() + "/src/assets/logs/admin_cmds.log" # admin cmds logs
     local_settings_path = os.getcwd() + "/src/assets/settings.skrillec"
+    local_err_path = os.getcwd() + "/src/assets/logs/erros.log"
+    local_blacklist_path = os.getcwd() + "/src/assets/db/blacklisted.skrillec"
     bot_prefix = ";"

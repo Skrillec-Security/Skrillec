@@ -1,7 +1,7 @@
 import os, sys, time
 
-from ..authentication.crud import *
-from ..discord_utils.embed_msg import *
+from ...authentication.crud import *
+from ...discord_utils.embed_msg import *
 
 async def Info(client):
     info = Crud.find_user(str(client.author.id))

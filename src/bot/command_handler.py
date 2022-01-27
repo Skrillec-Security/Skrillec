@@ -1,17 +1,23 @@
 import os, sys, time
 
+## Basic Cmds
 from ..commands.help import *
-from ..commands.clear import *
-from ..commands.help_mod import *
-from ..commands.attack import *
-from ..commands.purge import *
-from ..commands.role import *
-from ..commands.attack import *
-from ..commands.info import *
-from ..commands.help_attack import *
-from ..commands.methods import *
-from ..commands.help_tools import *
 from ..commands.invite import *
+## Account 
+from ..commands.account_cmds.help_acct import *
+from ..commands.account_cmds.info import *
+## Tools
+from ..commands.tools_cmds.help_tools import *
+## Attack
+from ..commands.attack_cmds.attack import *
+from ..commands.attack_cmds.help_attack import *
+from ..commands.attack_cmds.methods import *
+## Tools
+from ..commands.tools_cmds.geoip import *
+## Mod
+from ..commands.mod_cmds.clear import *
+from ..commands.mod_cmds.help_mod import *
+from ..commands.mod_cmds.purge import *
 
 async def handle_cmd(client, msg: str, cmd: str, args):
     # Help Commands
@@ -20,6 +26,7 @@ async def handle_cmd(client, msg: str, cmd: str, args):
     elif cmd == "invite": await invite_me(client)
 
     ## Account Commands
+    elif cmd == "help" and args[1] == "acct": await help_acct(client)
     elif cmd == "info": await Info(client)
 
     ## Moderation Commands
@@ -33,6 +40,7 @@ async def handle_cmd(client, msg: str, cmd: str, args):
 
     ## Tools Commands
     elif cmd == "help" and args[1] == "tools": await help_tools(client)
+    elif cmd == "geoip": await GeoIP(client, args)
 
     ## DDOS Commands
     elif cmd == "help" and args[1] == "attack": await help_attack(client, args)

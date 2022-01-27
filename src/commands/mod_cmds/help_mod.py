@@ -1,6 +1,6 @@
 import os, sys, time
 
-from ..discord_utils.embed_msg import *
+from ...discord_utils.embed_msg import *
 
 async def help_mod(client):
     mod_list = """```  Usage       Tools

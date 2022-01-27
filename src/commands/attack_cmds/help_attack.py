@@ -1,6 +1,6 @@
 import os, sys, time
 
-from ..discord_utils.embed_msg import *
+from ...discord_utils.embed_msg import *
 
 async def help_attack(client, args):
     attack_list = """```
