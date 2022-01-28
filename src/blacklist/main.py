@@ -3,7 +3,7 @@ import os, sys, time
 from ..config.main import *
 
 class Blacklist:
-    def BlacklistedUsers():
+    def Users():
         return open(Config.local_blacklist_path, "r").read().split("\n")
 
     """
