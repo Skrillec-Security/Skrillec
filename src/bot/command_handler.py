@@ -14,10 +14,12 @@ from ..commands.attack_cmds.help_attack import *
 from ..commands.attack_cmds.methods import *
 ## Tools
 from ..commands.tools_cmds.geoip import *
+from ..commands.tools_cmds.pscan import *
 ## Mod
 from ..commands.mod_cmds.clear import *
 from ..commands.mod_cmds.help_mod import *
 from ..commands.mod_cmds.purge import *
+from ..commands.mod_cmds.role import *
 
 async def handle_cmd(client, msg: str, cmd: str, args):
     # Help Commands
@@ -41,6 +43,7 @@ async def handle_cmd(client, msg: str, cmd: str, args):
     ## Tools Commands
     elif cmd == "help" and args[1] == "tools": await help_tools(client)
     elif cmd == "geoip": await GeoIP(client, args)
+    elif cmd == "pscan": await PortScan(client, args)
 
     ## DDOS Commands
     elif cmd == "help" and args[1] == "attack": await help_attack(client, args)
