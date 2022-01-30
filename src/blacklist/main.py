@@ -4,8 +4,8 @@ from ..config.main import *
 
 class Blacklist:
     async def Users():
-        print(open(Config.local_blacklist_path_backup, "r").read().split("\n"))
-        return open(Config.local_blacklist_path_backup, "r").read().split("\n")
+        print(open(Config.local_blacklist_path, "r").read().split("\n"))
+        return open(Config.local_blacklist_path, "r").read().split("\n")
 
     """
         Use example:
