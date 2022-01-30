@@ -6,7 +6,7 @@ from ..utils.syn_parser import *
 
 class Configuration:
     def settings():
-        return open(Config.local_settings_path_backup, "r").read()
+        return open(Config.local_settings_path, "r").read()
 
     """
         Use Example:
