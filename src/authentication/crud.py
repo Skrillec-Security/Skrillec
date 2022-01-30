@@ -9,7 +9,7 @@ class Crud:
 
     def find_user(userid):
         try:
-            users = open(Config.local_db_path_backup, "r").read()
+            users = open(Config.local_db_path, "r").read()
             for user in users.split("\n"):
                 if len(user) == 0: return 0
                 info = Crud.parse_dbLine(user)
@@ -22,7 +22,7 @@ class Crud:
 
     def register_user(discord_name, discord_id):
         try:
-            users_db = open(Config.local_db_path_backup, "a")
+            users_db = open(Config.local_db_path, "a")
             users_db.write("('" + discord_name + "','" + discord_id + "','0','0','0','0','0','0/0/0000")
             users_db.close()
         except:
@@ -31,7 +31,7 @@ class Crud:
 
     def remove_user(discord_id):
         try:
-            users_db = open(Config.local_db_path_backup, "r").read()
+            users_db = open(Config.local_db_path, "r").read()
             new_db = ""
             for user in users_db:
                 if user.contains("','" + discord_id + "','"): continue
