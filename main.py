@@ -13,13 +13,15 @@ class MyClient(discord.Client):
     async def on_ready(self):
         print('Logged on as {0}!'.format(self.user))
 
-    async def on_join(self, client):
-        if client.author.id in BlacklistedUsers():
-            await client.create_dm.send("You're a broke fucking skid. Stop trying to join random")
-            await client.delete()
-            await client.kick()
+    async def on_member_join(self, client):
+        print("here")
 
     async def on_message(self, client):
+        # if str(client.author.id) in (await Blacklist.Users()):
+            # print("here")
+            # await client.send_message("You're a broke fucking skid. Stop trying to join random")
+            # await client.author.delete()
+            # await client.author.kick()
         if url_block(client.content) == 0 | client.author.id != "918258241576792115":
             await client.delete()
             return await embed(client, "Error", "No Links Skid")
@@ -41,4 +43,4 @@ class MyClient(discord.Client):
 
 client = MyClient()
 python_is_gay_as_fuck = str(Configuration.get_token())
-client.run('OTMxOTQ4MTUwNzk5ODcyMDQw.YeL2WQ.dgL122UDEptrILE73A-K_BQomLk')
+client.run('OTMxOTQ4MTUwNzk5ODcyMDQw.YeL2WQ.kyB0SrUF_oGF4f8eujEoAVOMuTk')
