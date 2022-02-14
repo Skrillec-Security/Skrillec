@@ -1,4 +1,4 @@
-import os, sys, time, requests, discord
+import os, sys, time, requests, discord, threading
 
 # Importing submodules
 from src.bot.command_handler import *
@@ -8,6 +8,11 @@ from src.config.configure import *
 from src.discord_utils.embed_msg import *
 from src.utils.custom_utils import *
 from src.blacklist.main import *
+
+
+"""
+    Skrillec Moderation Bot
+"""
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -41,6 +46,17 @@ class MyClient(discord.Client):
 
         print('client from {0.author}: {0.content}'.format(client))
 
+
+"""
+    Skrillec DDOS Bot
+"""
+class Skrillec_DDOS(discord.Client):
+    async def on_ready(self):
+        print('Logged on as {0}!'.format(self.user))
+
+    async def on_message(self, client):
+        print('client from {0.author}: {0.content}'.format(client))
+
 client = MyClient()
 python_is_gay_as_fuck = str(Configuration.get_token())
-client.run('OTMxOTQ4MTUwNzk5ODcyMDQw.YeL2WQ.WOPgYUeElY3ivjkZU9rCPUW_srE')
+client.run('OTMxOTQ4MTUwNzk5ODcyMDQw.YeL2WQ.EXZuqlm8WDZsQDsq1RGNFI8heTA')
