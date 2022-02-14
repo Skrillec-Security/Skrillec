@@ -10,7 +10,9 @@ class ErrHandler:
         make_log_format()
 
     def make_log_format():
-        output = """
+        output = """Skrillec Bot Error Handler
+______________________________________
+
         """
 
 
