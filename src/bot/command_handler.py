@@ -20,6 +20,7 @@ from ..commands.mod_cmds.clear import *
 from ..commands.mod_cmds.help_mod import *
 from ..commands.mod_cmds.purge import *
 from ..commands.mod_cmds.role import *
+from ..commands.mod_cmds.ban import *
 
 async def handle_cmd(client, msg: str, cmd: str, args):
     # Help Commands
@@ -34,8 +35,8 @@ async def handle_cmd(client, msg: str, cmd: str, args):
     ## Moderation Commands
     elif cmd == "clear": await clear(client)
     elif cmd == "purge": await purge(client, args)
-    elif cmd == "role": await role(client, args)
-    # elif cmd == "ban": 
+    #elif cmd == "role": await role(client, args)
+    elif cmd == "ban": await ban(client, args)
     # elif cmd == "kick":
     # elif cmd == "lock_channel":
     # elif cmd == "lock_server":
