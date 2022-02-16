@@ -1,3 +1,4 @@
+from collections import UserString
 import os, sys, time
 
 from ..config.main import *
@@ -42,3 +43,19 @@ class Crud:
         except:
             return 0
         return 1
+
+    def update_user(userid, new_lvl, new_mtime, new_conn, new_admin, new_expiry) -> bool:
+        new_db = ""
+        try: ## Adding a try/except to handle errors instead of exiting app with an error 
+            users = open(Config.local_db_path, "r").read().split("\n") ## Reading file and splitting the file data into "\n" (Lines)
+            for user in users: ## Looping thru lines in the file
+                if len(user) == 0 | len(user) < 15: continue ## Skip empty/un-necessary lines 
+                info = Crud.parse_dbLine(user) ## Parsing the line into an array
+                if info[1] == userid: ## looking for user line in file
+                    new_db += "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')\n".format(info[0], userid, new_lvl, new_mtime, info[4], new_conn, new_admin, new_expiry)
+                else:
+                    new_db += user ## Putting the other lines back in file
+            return "[+] User <@{0}> updated!".format(userid)
+        except:
+            return "[x] Exception Error, Unable to update user!"
+            
