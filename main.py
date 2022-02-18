@@ -22,11 +22,7 @@ class MyClient(discord.Client):
         print("here")
 
     async def on_message(self, client):
-        # if str(client.author.id) in (await Blacklist.Users()):
-            # print("here")
-            # await client.send_message("You're a broke fucking skid. Stop trying to join random")
-            # await client.author.delete()
-            # await client.author.kick()
+        print(message.attachments)
         if url_block(client.content) == 0 | client.author.id != "918258241576792115":
             await client.delete()
             return await embed(client, "Error", "No Links Skid")
@@ -59,4 +55,4 @@ class Skrillec_DDOS(discord.Client):
 
 client = MyClient()
 python_is_gay_as_fuck = str(Configuration.get_token())
-client.run('OTMxOTQ4MTUwNzk5ODcyMDQw.YeL2WQ.EXZuqlm8WDZsQDsq1RGNFI8heTA')
+client.run('OTQzOTk0ODAxNzUyMjQ0MzM0.Yg7Jqw.ahXNUFvknNHDI_xEtULcRZvZtbM')
