@@ -1,22 +1,58 @@
-import os, sys, time
+import os, sys, time, subprocess, random
 
-def gradient(startrgb, endrgb, text):
-    change_r = endrgb[0] - startrgb[0] / len(text)
-    change_g = endrgb[1] - startrgb[1] / len(text)
-    change_b = endrgb[2] - startrgb[2] / len(text)
+from .gradient import *
+from ...discord_utils.embed_msg import *
 
-    r = startrgb[0]
-    g = startrgb[1]
-    b = startrgb[2]
+async def gradient(client, args):
+    if len(args) == 0 | len(args) < 3: return (await embed(client, "Error", "Invalid argument(s)\nUsage: ;fade <color1> <color2> <text>"))
 
-    grad_text = ""
-    for i in text:
-        if i == '\n':
-            grad_text += "\n"
-        
-        grad_text += "\x1b[38;2;{0};{1};{2}m{3}".format(r,g,b,i)
-        r += change_r
-        g += change_g
-        b += change_b
-    
-    print(grad_text)
+    ## Get ARGUMENTs 
+    color1 = args[1]
+    color2 = args[2]
+
+    text = ""
+
+    for i in args[3:]:
+        text += i + " "
+
+    """
+        Removing characters that will break the command or characters that can cause bad things to happen to the box!
+    """
+    text = text.replace("'", "")
+    text = text.replace(";", "")
+    text = text.replace("|", "")
+    text = text.replace("`", "")
+    text = text.replace('\\', "")
+    text = text.replace(",", "")
+    text = text.replace("IFS", "")
+    text = text.replace('$', "")
+    text = text.replace('"', "")
+
+    ANSI_File = generate_filename()
+
+    try:
+        CMD = "echo {0} | /home/ubuntu/skrillec/src/commands/ansi_cmds/fade {1} {2} > {3}.txt; cat {3}.txt".format(text, color1, color2, ANSI_File)
+        print(CMD)
+        check_grad = subprocess.getoutput(CMD)
+        print(check_grad)
+
+        ## Move the file to web server
+
+        check_code = subprocess.getoutput("sudo mv {0}.txt /var/www/html/ansi/".format(ANSI_File))
+        print(check_code)
+
+        return await embed(client, "ANSI Gradient Command", "https://api.skrillec.pw/ansi/{0}.txt".format(ANSI_File))
+    except:
+        return await embed(client, "Error", "An exception error has occurred, Try again....")
+
+def generate_filename():
+    chars = "qwertyuiopasdfghjklzxcvbnm1234567890"
+    num = random.randint(0, len(chars))
+    last_num = 0
+    file_name = ""
+    for i in range(0, 10):
+        if num == last_num:
+            num = random.randint(0, len(chars))
+        last_num = num
+        file_name += chars[num]
+    return file_name
