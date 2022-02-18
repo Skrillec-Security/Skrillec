@@ -1,5 +1,6 @@
 import os, sys, time
 from src.authentication.crud import *
 from src.authentication.main import *
+from src.commands.ansi_cmds.gradient import *
 
-print(find_user("918258241576792115"))
+gradient([33, 76, 25], [60, 99, 133], "Testing this function")
