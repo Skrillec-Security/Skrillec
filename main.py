@@ -22,7 +22,6 @@ class MyClient(discord.Client):
         print("here")
 
     async def on_message(self, client):
-        print(message.attachments)
         if url_block(client.content) == 0 | client.author.id != "918258241576792115":
             await client.delete()
             return await embed(client, "Error", "No Links Skid")
