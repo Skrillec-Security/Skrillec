@@ -5,6 +5,7 @@ from ..commands.help import *
 from ..commands.invite import *
 ## Account 
 from ..commands.account_cmds.help_acct import *
+from ..commands.account_cmds.register import *
 from ..commands.account_cmds.info import *
 ## Attack
 from ..commands.attack_cmds.attack import *
@@ -16,6 +17,7 @@ from ..commands.tools_cmds.geoip import *
 from ..commands.tools_cmds.pscan import *
 ## ANSI
 from ..commands.ansi_cmds.gradient import *
+from ..commands.ansi_cmds.img2txt import *
 ## Mod
 from ..commands.mod_cmds.clear import *
 from ..commands.mod_cmds.help_mod import *
@@ -31,12 +33,13 @@ async def handle_cmd(client, msg: str, cmd: str, args):
 
     ## Account Commands
     elif cmd == "help" and args[1] == "acct": await help_acct(client)
+    elif cmd == "register": await Register(client)
     elif cmd == "info": await Info(client)
 
     ## Moderation Commands
     elif cmd == "clear": await clear(client)
     elif cmd == "purge": await purge(client, args)
-    #elif cmd == "role": await role(client, args)
+    elif cmd == "role": await Role(client, args)
     elif cmd == "ban": await ban(client, args)
     # elif cmd == "kick":
     # elif cmd == "lock_channel":
@@ -53,5 +56,5 @@ async def handle_cmd(client, msg: str, cmd: str, args):
     elif cmd == "methods": await methods(client)
 
     ## ANSI Commands
-
     elif cmd == "fade": await gradient(client, args)
+    elif cmd == "img2txt": await img2txt(client, args)
