@@ -26,9 +26,10 @@ class Crud:
             users_db = open(Config.local_db_path, "a")
             users_db.write("('" + discord_name + "','" + discord_id + "','0','0','0','0','0','0/0/0000")
             users_db.close()
+            return 1
         except:
-            return 0
-        return 1
+            return -1
+        return 0
 
     def remove_user(discord_id):
         try:
