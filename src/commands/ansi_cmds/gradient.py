@@ -31,7 +31,7 @@ async def gradient(client, args):
     ANSI_File = generate_filename()
 
     try:
-        CMD = "echo {0} | /home/ubuntu/skrillec/src/commands/ansi_cmds/fade {1} {2} > {3}.txt; cat {3}.txt".format(text, color1, color2, ANSI_File)
+        CMD = "echo {0} | /home/ubuntu/Skrillec/src/commands/ansi_cmds/fade {1} {2} > {3}.txt; cat {3}.txt".format(text, color1, color2, ANSI_File)
         print(CMD)
         check_grad = subprocess.getoutput(CMD)
         print(check_grad)
