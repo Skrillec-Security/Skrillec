@@ -22,8 +22,14 @@ class MyClient(discord.Client):
     async def on_ready(self):
         print('Logged on as {0}!'.format(self.user))
 
+    async def on_join(self, client):
+        print("works 1")
+        
+    async def on_member_join(self, client):
+        print("works 2")
+
     async def on_message(self, client):
-        if url_block(client.content) == 0 | client.author.id != "918258241576792115":
+        if url_block(client.content) == 0:
             await client.delete()
             return await embed(client, "Error", "No Links Skid")
         if (client.content).startswith(Config.bot_prefix):
@@ -55,4 +61,4 @@ class Skrillec_DDOS(discord.Client):
 
 client = MyClient()
 python_is_gay_as_fuck = str(Configuration.get_token())
-client.run('OTQzOTk0ODAxNzUyMjQ0MzM0.Yg7Jqw.ahXNUFvknNHDI_xEtULcRZvZtbM')
+client.run(str(sys.argv[1]))
