@@ -42,7 +42,7 @@ async def handle_cmd(client, msg: str, cmd: str, args):
     elif cmd == "role": await Role(client, args)
     elif cmd == "ban": await ban(client, args)
     # elif cmd == "kick":
-    # elif cmd == "lock_channel":
+    elif cmd == "clock": await clock(client)
     # elif cmd == "lock_server":
 
     ## Tools Commands
