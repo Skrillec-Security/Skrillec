@@ -1,3 +1,0 @@
-"""
-    slock.py => Server Lock
-"""
