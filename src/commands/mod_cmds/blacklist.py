@@ -11,3 +11,6 @@
 import os, sys, time
 
 from .config.main import *
+
+async def blacklist_user(client, args):
+    return ""
