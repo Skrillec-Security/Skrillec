@@ -24,6 +24,8 @@ from ..commands.mod_cmds.help_mod import *
 from ..commands.mod_cmds.purge import *
 from ..commands.mod_cmds.role import *
 from ..commands.mod_cmds.ban import *
+from ..commands.mod_cmds.ch_lock import *
+from ..commands.mod_cmds.ch_unlock import *
 
 async def handle_cmd(client, msg: str, cmd: str, args):
     # Help Commands
