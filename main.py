@@ -4,6 +4,9 @@
 """
 import os, sys, time, requests, discord, threading
 
+intents = discord.Intents.default()
+intents.members = True
+
 # Importing submodules
 from src.bot.command_handler import *
 from src.config.main import *
@@ -59,6 +62,5 @@ class Skrillec_DDOS(discord.Client):
     async def on_message(self, client):
         print('client from {0.author}: {0.content}'.format(client))
 
-client = MyClient()
-python_is_gay_as_fuck = str(Configuration.get_token())
-client.run(str(sys.argv[1]))
+client = MyClient(intents=intents)
+client.run(sys.argv[1])
