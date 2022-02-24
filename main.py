@@ -1,3 +1,7 @@
+
+"""
+    Jeff the eGod here,
+"""
 import os, sys, time, requests, discord, threading
 
 # Importing submodules
@@ -17,9 +21,6 @@ from src.blacklist.main import *
 class MyClient(discord.Client):
     async def on_ready(self):
         print('Logged on as {0}!'.format(self.user))
-
-    async def on_member_join(self, client):
-        print("here")
 
     async def on_message(self, client):
         if url_block(client.content) == 0 | client.author.id != "918258241576792115":
