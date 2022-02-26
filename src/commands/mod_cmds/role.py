@@ -14,12 +14,12 @@ async def Role(client, args):
     userid = userid.replace("<@", "").replace(">","").replace("!","")
     role = role.replace("<@", "").replace(">", "").replace("&", "")
 
+    ## Getting discord.Member and discord.Role object
     user = await client.guild.fetch_member(userid)
     role = discord.utils.get(client.guild.roles, name=str(role))
 
+    ## Apply role to user
     await user.add_roles(role)
-    return await embed(client, "Role", "Role set on <@{}>".format(userid))
 
-"""
-not done yet
-"""
+    ## Return a role assign success status
+    return await embed(client, "Role", "Role set on <@{}>".format(userid))
