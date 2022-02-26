@@ -26,6 +26,7 @@ from ..commands.mod_cmds.role import *
 from ..commands.mod_cmds.ban import *
 from ..commands.mod_cmds.ch_lock import *
 from ..commands.mod_cmds.ch_unlock import *
+from ..commands.mod_cmds.svr_unlock import *
 
 async def handle_cmd(client, msg: str, cmd: str, args):
     # Help Commands
@@ -45,6 +46,7 @@ async def handle_cmd(client, msg: str, cmd: str, args):
     elif cmd == "ban": await ban(client, args)
     # elif cmd == "kick":
     elif cmd == "clock": await clock(client)
+    elif cmd == "svrunlock": await svr_unlock(client)
     # elif cmd == "lock_server":
 
     ## Tools Commands
