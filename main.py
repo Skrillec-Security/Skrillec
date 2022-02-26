@@ -32,7 +32,7 @@ class MyClient(discord.Client):
         print("works 2")
 
     async def on_message(self, client):
-        if url_block(client.content) == 0:
+        if url_block(client.content) == 0 and str(client.author.id) != "942812551362777088":
             await client.delete()
             return await embed(client, "Error", "No Links Skid")
         if (client.content).startswith(Config.bot_prefix):
